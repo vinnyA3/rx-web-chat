@@ -4,8 +4,8 @@
   "description": "package.json for server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prettier": "prettier-standard-formatter index.js"
+    "test": "mocha ./tests/**/*.spec.js",
+    "prettier": "prettier-standard-formatter ./tests/**/*.js ./web/**/*.js"
   },
   "author": "",
   "license": "ISC",
