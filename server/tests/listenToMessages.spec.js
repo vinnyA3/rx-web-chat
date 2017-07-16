@@ -40,7 +40,7 @@ describe('Listen to message test', () => {
   it('must not listen to message send privately', done => {
     const mockData = mockDataFactory()
     const services = servicesFactory(mockData)
-    const recievedMessage = false
+    let receivedMessage = false
     const me = 'Vince'
     const to = 'other'
     const content = 'Nobody cared who I was until I put on the mask...'
@@ -48,11 +48,11 @@ describe('Listen to message test', () => {
     const subscription = services
       .listenToMessages({ me })
       .subscribe(message => {
-        recievedMessage = true
+        receivedMessage = true
       },
       _ => {}, // noop
       () => {
-        assert.equal(recievedMessage, false)
+        assert.equal(receivedMessage, false)
         done()
       })
       mockData.push(message)
