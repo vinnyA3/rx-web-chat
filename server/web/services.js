@@ -8,7 +8,6 @@ module.exports = dataSource => {
         dataSource.push({ to, from, content })
       }
     },
-    command () {},
     listenToMessages: (payload, observable) => {
       const { to, me, from } = payload
       const obs = observable || dataSource.get()
